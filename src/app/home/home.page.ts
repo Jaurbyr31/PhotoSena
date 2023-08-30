@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Camera, CameraResultType} from '@capacitor/camera';
-import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -10,15 +10,11 @@ import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
 export class HomePage {
 imageSource: any;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  takePicture = async () => {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false ,
-      resultType: CameraResultType.DataUrl,
-      source:CameraSource.Prompt
-    });
-    this.imageSource=image.dataUrl;
+  
+  
+  agregar = async () => {
+    
   }
 }
