@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -8,16 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-imageSource: any;
 
-  constructor(private route: Router) {}
+  receivedImageSource: any;
+  receivedTitulo: string='';
+  receivedDescripcion: string='';
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   
-  Navigate(){
-    this.route.navigate(['/detalle']);
-    
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.receivedImageSource = params['imageSource'];
+      this.receivedTitulo = params['titulo'];
+      this.receivedDescripcion = params['Descripcion'];
+    });
   }
-  agregar = async () => {
-    
+  irFormulario(){ this.router.navigate(['./formulario']);  }
+  
+
+  irDetalle() {this.router.navigate(['/detalle-photo'], {
+    queryParams: {
+      receivedImageSource: this.receivedImageSource,
+      receivedTitulo: this.receivedTitulo,
+      receivedDescripcion: this.receivedDescripcion,
+      },
+    });
   }
 }
