@@ -10,10 +10,13 @@ import { Router } from '@angular/router';
 export class HomePage {
 imageSource: any;
 
-  constructor(private router: Router) {}
+  constructor(private route: Router) {}
 
   
-  
+  Navigate(){
+    this.route.navigate(['/detalle']);
+    
+  }
   agregar = async () => {
     
   }

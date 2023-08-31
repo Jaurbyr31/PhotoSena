@@ -35,6 +35,12 @@ export class LoginPage {
         },
       ],
       buttons: [
+        
+        {
+          text: 'Registrarse',
+          role: 'text',
+          handler:()=>{this.router.navigate(['/registro'])}
+        },
         {
           text: 'Cancelar',
           role: 'cancel',
