@@ -6,7 +6,7 @@
   <ion-list (ngSubmit)="irHome()">
     <ion-item class="tit">
       <ion-label position="floating">titulo:</ion-label>
-      <ion-input type="text" name="titulo" required></ion-input>
+      <ion-input type="text" [(ngModel)]="titulo" name="titulo" required></ion-input>
     </ion-item>
     <ion-item class="tit">
       <ion-label position="floating">Descripción:</ion-label>

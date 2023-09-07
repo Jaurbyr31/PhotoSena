@@ -1,9 +1,11 @@
 <ion-card>
-  <img src="{{imageSource}}">
-  <ion-card-header>
-    <ion-card-title>{{titulo}}</ion-card-title>
-  </ion-card-header>
+  <ion-item lines="none">
+    <h1 slot="start" color="blue">{{titulo}}</h1>
+    <ion-icon slot="end" routerLink="/home" name="play-back-outline"></ion-icon>
+  </ion-item>
 
+  <img src="{{imageSource}}">
+  
   <ion-card-content>
     {{Descripcion}}
   </ion-card-content>

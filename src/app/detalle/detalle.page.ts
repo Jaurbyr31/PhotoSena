@@ -8,15 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage implements OnInit {
-  detallePelicula: any =[];
-
-  titleNew: string='';
-  dateNew: string='';
-  duracion: string='';
-  description: string='';
-  textLong: string='';
-  urlImg: string='';
-  
 
   constructor(private router:Router, private route: ActivatedRoute) {}
 
@@ -34,15 +25,14 @@ export class DetallePage implements OnInit {
     });
   }
 
-  back(){this.router.navigate(['/home'], 
-    {
-      queryParams: {
-        imageSource: this.imageSource,
-        titulo: this.titulo,
-        Descripcion: this.Descripcion,
-        calificacion: this.selectedRating,
-      },
-    });
+  /* Aca se envian los parametros*/
+  back(){this.router.navigate(['/home'], {
+    queryParams: {
+      imageSource: this.imageSource,
+      titulo: this.titulo,
+      Descripcion: this.Descripcion,
+    },
+  });
   }
 
   stars = [

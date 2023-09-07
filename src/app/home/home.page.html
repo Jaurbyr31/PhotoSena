@@ -5,35 +5,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card >
-    <img [src]="receivedImageSource" />
+  <ion-card *ngFor="let image of imageArray">
+    <img src="{{ image.receivedImageSource }}">
     <ion-card-header>
-      <ion-card-title>{{ receivedTitulo }}</ion-card-title>
+      <ion-card-title>{{ image.receivedTitulo }}</ion-card-title>
     </ion-card-header>
-  
-    <ion-card-content>
-      {{receivedDescripcion}}
-    </ion-card-content>
-    
+
     <ion-button (click)="irDetalle()">Detalle</ion-button>
   </ion-card>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        
-
         <ion-tab-button routerLink="/formulario" tab="radio">
           <ion-icon name="add-outline"></ion-icon>
           Agregar
         </ion-tab-button>
-
-        
       </ion-tab-bar>
     </ion-tabs>
-
   </ion-toolbar>
 </ion-footer>
